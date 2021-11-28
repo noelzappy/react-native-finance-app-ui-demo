@@ -182,32 +182,29 @@ export default function Home() {
           <Text style={{ color: "grey", fontSize: 20 }}> > </Text>
         </View>
       </View>
-      <View
+
+      <CalendarStrip
+        scrollable
         style={{
-          flex: 1,
+          height: height(10),
+          paddingTop: width(1),
+          paddingBottom: width(1),
         }}
-      >
-        <CalendarStrip
-          scrollable
-          style={{
-            height: height(10),
-            paddingTop: width(1),
-            paddingBottom: width(1),
-          }}
-          calendarColor={appColors.appAsh}
-          calendarHeaderStyle={{
-            color: "black",
-            fontSize: 18,
-            display: "none",
-          }}
-          dateNumberStyle={{ color: "grey", fontSize: 16 }}
-          dateNameStyle={{ color: "grey", fontSize: 16 }}
-          iconContainer={{ flex: 0.1 }}
-        />
-      </View>
-      <View style={{ marginHorizontal: width(4), marginTop: height(10) }}>
-        <DetailedDisplayCard data={dummyData2} />
-      </View>
+        calendarColor={appColors.appAsh}
+        calendarHeaderStyle={{
+          color: "black",
+          fontSize: 18,
+          display: "none",
+        }}
+        dateNumberStyle={{ color: "grey", fontSize: 16 }}
+        dateNameStyle={{ color: "grey", fontSize: 16 }}
+        iconContainer={{ flex: 0.1 }}
+      />
+
+      <DetailedDisplayCard
+        data={dummyData2}
+        styles={{ marginHorizontal: width(4) }}
+      />
 
       <StatusBar barStyle="default" backgroundColor={appColors.appMain} />
     </SafeAreaProvider>

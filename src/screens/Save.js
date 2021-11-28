@@ -5,7 +5,7 @@ import {
   StatusBar,
   Image,
   ImageBackground,
-  FlatList,
+  ScrollView,
 } from "react-native";
 import { height, width } from "react-native-dimension";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -39,16 +39,16 @@ export default function MenuScreen() {
       amount: 697.43,
       date: "Dec 25",
     },
-    // {
-    //   name: "Binance Coin",
-    //   amount: 697.43,
-    //   date: "Dec 25",
-    // },
-    // {
-    //   name: "Binance Coin",
-    //   amount: 697.43,
-    //   date: "Dec 25",
-    // },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
+      date: "Dec 25",
+    },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
+      date: "Dec 25",
+    },
   ];
 
   return (
@@ -137,9 +137,11 @@ export default function MenuScreen() {
           <Text style={{ color: "grey", fontSize: 20 }}> > </Text>
         </View>
       </View>
-      <View style={{ marginHorizontal: width(7) }}>
-        <SavingsDisplayCard data={dummyData} />
-      </View>
+
+      <SavingsDisplayCard
+        data={dummyData}
+        styles={{ marginHorizontal: width(7), marginBottom: height(2) }}
+      />
 
       <StatusBar barStyle="default" backgroundColor={appColors.appMain} />
     </SafeAreaProvider>

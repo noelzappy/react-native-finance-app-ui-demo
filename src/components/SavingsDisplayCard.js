@@ -4,7 +4,7 @@ import { Feather } from "@expo/vector-icons";
 import { height, width } from "react-native-dimension";
 import { appColors } from "../constants/colors";
 
-export default function DetailedDisplayCard({ data }) {
+export default function DetailedDisplayCard({ data, styles }) {
   const renderFlatlistItem = ({ item, index }) => {
     return (
       <View
@@ -58,19 +58,16 @@ export default function DetailedDisplayCard({ data }) {
     );
   };
   return (
-    <View
-      style={{
+    <FlatList
+      data={data}
+      renderItem={renderFlatlistItem}
+      keyExtractor={(item, index) => `${item.name}${index}`}
+      contentContainerStyle={{
+        ...styles,
         backgroundColor: "#fff",
         borderRadius: width(5),
         padding: height(2),
-        // elevation: 4,
       }}
-    >
-      <FlatList
-        data={data}
-        renderItem={renderFlatlistItem}
-        keyExtractor={(item, index) => `${item.name}${index}`}
-      />
-    </View>
+    />
   );
 }
