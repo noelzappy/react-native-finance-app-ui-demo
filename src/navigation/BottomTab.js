@@ -19,6 +19,15 @@ const BottomTabs = () => {
         headerShown: false,
         tabBarActiveTintColor: "#27C5B2",
         // tabBarStyle: { height: height(7) },
+        tabBarStyle: {
+          height: height(8),
+          paddingBottom: height(1.5),
+          paddingTop: height(1),
+        },
+        tabBarLabelStyle: {
+          // marginBottom: width(2),
+          fontSize: 16,
+        },
       }}
     >
       <Tab.Screen

@@ -7,10 +7,12 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
+import CalendarStrip from "react-native-calendar-strip";
 import { height, width } from "react-native-dimension";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import Displaycard from "../components/Displaycard";
 import { appColors } from "../constants/colors";
+import DetailedDisplayCard from "../components/DetailedDisplayCard";
 
 export default function Home() {
   const dummyData = [
@@ -29,6 +31,37 @@ export default function Home() {
     {
       amount: 5238,
       text: "in 23 day or later",
+    },
+  ];
+
+  const dummyData2 = [
+    {
+      name: "Bitcoin",
+      amount: -2356,
+    },
+    {
+      amount: 563,
+      name: "Ethereum",
+    },
+    {
+      name: "ChainLink",
+      amount: 26.403,
+    },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
+    },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
+    },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
+    },
+    {
+      name: "Binance Coin",
+      amount: 697.43,
     },
   ];
   return (
@@ -106,25 +139,76 @@ export default function Home() {
           paddingVertical: height(2),
         }}
       >
-        <Text style={{ fontSize: 24 }}>Planning Ahead</Text>
-        <Text>$430 > </Text>
+        <Text style={{ fontSize: 22 }}>Planning Ahead</Text>
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 20 }}>$430 </Text>
+          <Text style={{ color: "grey", fontSize: 20 }}> > </Text>
+        </View>
       </View>
       <View
         style={{
           marginLeft: width(5),
         }}
       >
-        {/* <Displaycard />
-        <Displaycard />
-        <Displaycard />
-        <Displaycard /> */}
         <FlatList
           data={dummyData}
           renderItem={({ item }) => <Displaycard data={item} />}
           keyExtractor={(item, index) => `${item.amount}${index.toString()}`}
           horizontal
+          showsHorizontalScrollIndicator={false}
         />
       </View>
+      <View
+        style={{
+          backgroundColor: "silver",
+          height: width(0.2),
+          marginVertical: height(2.5),
+        }}
+      />
+
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          // margin: width(5),
+          backgroundColor: appColors.appAsh,
+          marginHorizontal: width(5),
+          paddingTop: height(2),
+        }}
+      >
+        <Text style={{ fontSize: 22 }}>Last Month Expenses</Text>
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 20 }}>$7630 </Text>
+          <Text style={{ color: "grey", fontSize: 20 }}> > </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          flex: 1,
+        }}
+      >
+        <CalendarStrip
+          scrollable
+          style={{
+            height: height(10),
+            paddingTop: width(1),
+            paddingBottom: width(1),
+          }}
+          calendarColor={appColors.appAsh}
+          calendarHeaderStyle={{
+            color: "black",
+            fontSize: 18,
+            display: "none",
+          }}
+          dateNumberStyle={{ color: "grey", fontSize: 16 }}
+          dateNameStyle={{ color: "grey", fontSize: 16 }}
+          iconContainer={{ flex: 0.1 }}
+        />
+      </View>
+      <View style={{ marginHorizontal: width(4), marginTop: height(10) }}>
+        <DetailedDisplayCard data={dummyData2} />
+      </View>
+
       <StatusBar barStyle="default" backgroundColor={appColors.appMain} />
     </SafeAreaProvider>
   );

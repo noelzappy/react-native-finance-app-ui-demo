@@ -5,14 +5,14 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { appColors } from "../constants/colors";
 
 export default function Displaycard({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <View
       style={{
         backgroundColor: "#fff",
         padding: height(2),
-        borderRadius: width(1),
-        elevation: 5,
+        borderRadius: width(3),
+        // elevation: 5,
         marginRight: width(2),
       }}
     >
