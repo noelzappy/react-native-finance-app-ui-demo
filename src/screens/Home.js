@@ -120,11 +120,19 @@ export default function Home() {
             </Text>
           </View>
         </View>
-        <View style={{ marginHorizontal: width(5), marginTop: height(5) }}>
+        <View
+          style={{
+            marginHorizontal: width(5),
+            marginTop: height(5),
+            marginBottom: height(2),
+          }}
+        >
           <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
             Total Balance to spend
           </Text>
-          <Text style={{ color: "#fff", fontSize: 62, fontWeight: "bold" }}>
+          <Text
+            style={{ color: "#fff", fontSize: width(12), fontWeight: "bold" }}
+          >
             $763992
           </Text>
         </View>

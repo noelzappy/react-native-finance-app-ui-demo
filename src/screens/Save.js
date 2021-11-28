@@ -97,11 +97,19 @@ export default function MenuScreen() {
             }}
           />
         </View>
-        <View style={{ marginHorizontal: width(5), marginTop: height(5) }}>
+        <View
+          style={{
+            marginHorizontal: width(5),
+            marginTop: height(5),
+            marginBottom: height(2),
+          }}
+        >
           <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
             Apartment Savings
           </Text>
-          <Text style={{ color: "#fff", fontSize: 62, fontWeight: "bold" }}>
+          <Text
+            style={{ color: "#fff", fontSize: width(12), fontWeight: "bold" }}
+          >
             $700.55
           </Text>
         </View>
